@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berry Bliss Bakery — Blueberry Muffins Made with Love</title>
+  <title>Dark Crumb Bakery — Goth Muffins for Dark Souls</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --purple: #5B3F8C;
-      --purple-light: #7B5FB0;
-      --purple-dark: #3D2A5E;
-      --cream: #FFF8F0;
-      --gold: #D4A843;
-      --gold-light: #F0D48A;
-      --berry: #8B5CF6;
-      --text: #2D2235;
-      --text-light: #6B5F78;
+      --black: #0A0A0A;
+      --charcoal: #1A1A1A;
+      --dark-grey: #2A2A2A;
+      --blood: #8B0000;
+      --blood-light: #B22222;
+      --purple: #4A0E4E;
+      --purple-glow: #7B2D8E;
+      --silver: #C0C0C0;
+      --bone: #E8E0D4;
+      --text: #D4D0CC;
+      --text-dim: #8A8580;
     }
 
     html { scroll-behavior: smooth; }
@@ -26,82 +28,88 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
-      background: var(--cream);
+      background: var(--black);
       line-height: 1.6;
     }
 
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    h1, h2, h3 { font-family: 'Cinzel', serif; letter-spacing: 0.05em; }
 
     /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(255, 248, 240, 0.95);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(91, 63, 140, 0.1);
+      border-bottom: 1px solid rgba(139, 0, 0, 0.3);
       padding: 1rem 2rem;
       display: flex; justify-content: space-between; align-items: center;
     }
-    nav .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--purple); font-weight: 700; }
+    nav .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--blood); font-weight: 700; }
     nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav a { text-decoration: none; color: var(--text-light); font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
-    nav a:hover { color: var(--purple); }
+    nav a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; font-weight: 500; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.1em; }
+    nav a:hover { color: var(--blood-light); }
 
     /* HERO */
     .hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, var(--cream) 0%, #EDE4F5 50%, #E8DFF0 100%);
+      background: linear-gradient(135deg, #0A0A0A 0%, #1A0A1A 40%, #0A0A0A 100%);
       padding: 6rem 2rem 4rem;
       position: relative;
       overflow: hidden;
     }
     .hero::before {
-      content: '🫐';
-      position: absolute; font-size: 15rem; opacity: 0.06;
-      top: 10%; left: -5%;
-      animation: float 6s ease-in-out infinite;
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(74, 14, 78, 0.15) 0%, transparent 70%);
     }
     .hero::after {
-      content: '🧁';
-      position: absolute; font-size: 12rem; opacity: 0.06;
-      bottom: 10%; right: -2%;
-      animation: float 8s ease-in-out infinite reverse;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(5deg); }
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(139,0,0,0.05)' stroke-width='1'/%3E%3C/svg%3E");
     }
     .hero h1 {
       font-size: clamp(2.5rem, 6vw, 5rem);
-      color: var(--purple-dark);
+      color: var(--bone);
       margin-bottom: 1rem;
       animation: fadeUp 1s ease-out;
+      position: relative;
+      text-shadow: 0 0 40px rgba(139, 0, 0, 0.3);
     }
     .hero .tagline {
       font-size: clamp(1rem, 2.5vw, 1.4rem);
-      color: var(--text-light);
-      max-width: 500px;
+      color: var(--text-dim);
+      max-width: 550px;
       margin-bottom: 2.5rem;
       animation: fadeUp 1s ease-out 0.2s both;
+      position: relative;
+      font-style: italic;
     }
     .btn {
       display: inline-block;
       padding: 0.9rem 2.5rem;
-      background: var(--purple);
-      color: white;
+      background: var(--blood);
+      color: var(--bone);
       text-decoration: none;
-      border-radius: 50px;
+      border-radius: 0;
       font-weight: 600;
       font-size: 1rem;
       transition: all 0.3s;
       animation: fadeUp 1s ease-out 0.4s both;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border: 1px solid var(--blood-light);
     }
-    .btn:hover { background: var(--purple-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(91,63,140,0.3); }
+    .btn:hover { background: var(--blood-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,0,0,0.4); }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
     }
 
     /* SECTIONS */
@@ -109,18 +117,20 @@
     .section-title {
       text-align: center;
       font-size: clamp(1.8rem, 4vw, 2.8rem);
-      color: var(--purple-dark);
+      color: var(--bone);
       margin-bottom: 0.5rem;
+      text-shadow: 0 0 20px rgba(139, 0, 0, 0.2);
     }
     .section-sub {
       text-align: center;
-      color: var(--text-light);
+      color: var(--text-dim);
       margin-bottom: 3rem;
       font-size: 1.05rem;
+      font-style: italic;
     }
 
     /* MENU */
-    .menu { background: white; }
+    .menu { background: var(--charcoal); }
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -129,25 +139,26 @@
       margin: 0 auto;
     }
     .menu-card {
-      background: var(--cream);
-      border-radius: 16px;
+      background: var(--dark-grey);
+      border: 1px solid rgba(139, 0, 0, 0.2);
+      border-radius: 2px;
       padding: 2rem;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     }
-    .menu-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(91,63,140,0.12); }
-    .menu-card .emoji { font-size: 3.5rem; margin-bottom: 1rem; }
-    .menu-card h3 { font-size: 1.3rem; color: var(--purple); margin-bottom: 0.5rem; }
-    .menu-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 1rem; }
-    .menu-card .price { font-weight: 700; color: var(--gold); font-size: 1.2rem; }
+    .menu-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(139,0,0,0.15); border-color: var(--blood); }
+    .menu-card .emoji { font-size: 3.5rem; margin-bottom: 1rem; filter: grayscale(0.3); }
+    .menu-card h3 { font-size: 1.3rem; color: var(--blood-light); margin-bottom: 0.5rem; }
+    .menu-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 1rem; }
+    .menu-card .price { font-weight: 700; color: var(--silver); font-size: 1.2rem; font-family: 'Cinzel', serif; }
 
     /* ABOUT */
     .about { max-width: 750px; margin: 0 auto; text-align: center; }
-    .about p { color: var(--text-light); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
-    .about .highlight { color: var(--purple); font-weight: 600; }
+    .about p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .about .highlight { color: var(--blood-light); font-weight: 600; }
 
     /* CONTACT */
-    .contact { background: white; }
+    .contact { background: var(--charcoal); }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -155,49 +166,62 @@
       max-width: 900px;
       margin: 0 auto;
     }
-    .contact-info h3 { font-size: 1.3rem; color: var(--purple); margin-bottom: 1rem; }
-    .contact-info p { color: var(--text-light); margin-bottom: 0.8rem; font-size: 0.95rem; }
-    .contact-info .icon { margin-right: 0.5rem; }
+    .contact-info h3 { font-size: 1.3rem; color: var(--blood-light); margin-bottom: 1rem; }
+    .contact-info p { color: var(--text-dim); margin-bottom: 0.8rem; font-size: 0.95rem; }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
       padding: 0.85rem 1rem;
-      border: 2px solid #E8E0F0;
-      border-radius: 10px;
+      border: 1px solid rgba(139, 0, 0, 0.3);
+      border-radius: 2px;
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       margin-bottom: 1rem;
       transition: border-color 0.3s;
-      background: var(--cream);
+      background: var(--dark-grey);
+      color: var(--text);
     }
     .contact-form input:focus,
-    .contact-form textarea:focus { outline: none; border-color: var(--purple-light); }
+    .contact-form textarea:focus { outline: none; border-color: var(--blood-light); }
     .contact-form textarea { resize: vertical; min-height: 120px; }
     .contact-form button {
       padding: 0.85rem 2rem;
-      background: var(--purple);
-      color: white;
-      border: none;
-      border-radius: 50px;
+      background: var(--blood);
+      color: var(--bone);
+      border: 1px solid var(--blood-light);
+      border-radius: 0;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
-    .contact-form button:hover { background: var(--purple-light); }
+    .contact-form button:hover { background: var(--blood-light); box-shadow: 0 0 20px rgba(139,0,0,0.4); }
 
     /* FOOTER */
     footer {
       text-align: center;
       padding: 2.5rem 2rem;
-      background: var(--purple-dark);
-      color: rgba(255,255,255,0.7);
+      background: var(--black);
+      color: var(--text-dim);
       font-size: 0.9rem;
+      border-top: 1px solid rgba(139, 0, 0, 0.2);
     }
     footer .socials { margin-bottom: 1rem; font-size: 1.4rem; }
-    footer .socials a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 0.5rem; transition: color 0.3s; }
-    footer .socials a:hover { color: var(--gold-light); }
+    footer .socials a { color: var(--text-dim); text-decoration: none; margin: 0 0.5rem; transition: color 0.3s; }
+    footer .socials a:hover { color: var(--blood-light); }
+
+    /* DIVIDER */
+    .divider {
+      text-align: center;
+      color: var(--blood);
+      font-size: 1.5rem;
+      letter-spacing: 1rem;
+      padding: 1rem 0;
+      opacity: 0.4;
+    }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -209,116 +233,118 @@
 <body>
 
   <nav>
-    <div class="logo">🫐 Berry Bliss</div>
+    <div class="logo">&#9760; Dark Crumb</div>
     <ul>
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">Manifesto</a></li>
+      <li><a href="#contact">Summon Us</a></li>
     </ul>
   </nav>
 
   <section class="hero">
-    <h1>Berry Bliss Bakery</h1>
-    <p class="tagline">Handcrafted blueberry muffins baked fresh every morning. Because life's too short for ordinary muffins.</p>
-    <a href="#menu" class="btn">See Our Muffins</a>
+    <h1>Dark Crumb Bakery</h1>
+    <p class="tagline">Muffins forged in darkness. Baked with black cocoa, activated charcoal, and a deep contempt for the ordinary.</p>
+    <a href="#menu" class="btn">Enter the Darkness</a>
   </section>
 
   <section class="menu" id="menu">
-    <h2 class="section-title">Our Muffins</h2>
-    <p class="section-sub">Every one bursting with real blueberries</p>
+    <h2 class="section-title">The Offerings</h2>
+    <p class="section-sub">Each one darker than the last</p>
     <div class="menu-grid">
       <div class="menu-card">
-        <div class="emoji">🫐</div>
-        <h3>Classic Blueberry</h3>
-        <p>The one that started it all. Fluffy, golden, and loaded with juicy blueberries.</p>
-        <div class="price">£3.50</div>
+        <div class="emoji">&#9760;</div>
+        <h3>The Void</h3>
+        <p>Pure black cocoa muffin with activated charcoal. As dark as your soul, as rich as your despair.</p>
+        <div class="price">&pound;4.50</div>
       </div>
       <div class="menu-card">
-        <div class="emoji">🍋</div>
-        <h3>Lemon Blueberry</h3>
-        <p>A bright citrus twist on our classic. Finished with a lemon glaze drizzle.</p>
-        <div class="price">£4.00</div>
+        <div class="emoji">&#127801;</div>
+        <h3>Blood Velvet</h3>
+        <p>Deep crimson red velvet with dark chocolate shards. Bleeds when you break it open.</p>
+        <div class="price">&pound;5.00</div>
       </div>
       <div class="menu-card">
-        <div class="emoji">🍫</div>
-        <h3>Chocolate Blueberry</h3>
-        <p>Rich dark chocolate meets sweet blueberries. An indulgent morning treat.</p>
-        <div class="price">£4.00</div>
+        <div class="emoji">&#9790;</div>
+        <h3>Midnight Moon</h3>
+        <p>Black sesame and white chocolate. A pale glow in an otherwise pitch-black muffin.</p>
+        <div class="price">&pound;5.00</div>
       </div>
       <div class="menu-card">
-        <div class="emoji">🥜</div>
-        <h3>Almond Crumble</h3>
-        <p>Topped with a crunchy almond streusel. Our best-seller for a reason.</p>
-        <div class="price">£4.50</div>
+        <div class="emoji">&#128375;</div>
+        <h3>The Coffin</h3>
+        <p>Espresso and dark chocolate with a hidden salted caramel core. Rest in pastry.</p>
+        <div class="price">&pound;5.50</div>
       </div>
       <div class="menu-card">
-        <div class="emoji">🌿</div>
-        <h3>Vegan Berry</h3>
-        <p>Plant-based and proud. Same amazing flavour, no compromise.</p>
-        <div class="price">£4.00</div>
+        <div class="emoji">&#128420;</div>
+        <h3>Pentagram Plum</h3>
+        <p>Black plum compote swirled through charcoal batter. Five-pointed flavour.</p>
+        <div class="price">&pound;5.00</div>
       </div>
       <div class="menu-card">
-        <div class="emoji">👑</div>
-        <h3>The Mega Muffin</h3>
-        <p>Double-sized, double-stuffed. For when one muffin simply isn't enough.</p>
-        <div class="price">£6.50</div>
+        <div class="emoji">&#9876;</div>
+        <h3>The Reaper</h3>
+        <p>Carolina reaper chilli and dark chocolate. This one bites back. Signed waiver recommended.</p>
+        <div class="price">&pound;6.66</div>
       </div>
     </div>
   </section>
 
+  <div class="divider">&#10013; &#10013; &#10013;</div>
+
   <section id="about">
     <div class="about">
-      <h2 class="section-title">Our Story</h2>
-      <p class="section-sub">Born from a love of blueberries</p>
+      <h2 class="section-title">Our Manifesto</h2>
+      <p class="section-sub">Born from the ashes of boring baking</p>
       <p>
-        Berry Bliss started in 2019 in a tiny kitchen in South London with one simple idea:
-        <span class="highlight">make the best blueberry muffin anyone has ever tasted.</span>
+        Dark Crumb was summoned in 2020 from a candlelit basement in Camden Town with one sacred vow:
+        <span class="highlight">to prove that darkness belongs in the kitchen.</span>
       </p>
       <p>
-        We source our blueberries from local farms, use only free-range eggs and real butter,
-        and bake everything fresh before dawn. No shortcuts, no preservatives, no nonsense —
-        just proper muffins made with love.
+        We use activated charcoal, black cocoa, squid ink, and other ingredients the mainstream
+        fears. Every muffin is baked at midnight, because that's when the oven speaks to us.
+        No pastels. No sprinkles. No compromise.
       </p>
       <p>
-        What started as a weekend market stall is now a neighbourhood favourite. Pop in, grab a muffin,
-        and see what the fuss is about.
+        We're not for everyone. We're for the ones who wear black to brunch and think
+        vanilla is a lifestyle choice they refuse to make.
       </p>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2 class="section-title">Visit Us</h2>
-    <p class="section-sub">We'd love to see you</p>
+    <h2 class="section-title">Summon Us</h2>
+    <p class="section-sub">If you dare</p>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>📍 Location</h3>
-        <p>42 Muffin Lane, Bermondsey<br>London SE1 3AB</p>
+        <h3>&#9760; The Crypt</h3>
+        <p>13 Raven Row, Camden Town<br>London NW1 6XX</p>
 
-        <h3>🕐 Hours</h3>
-        <p>Monday – Friday: 7am – 5pm</p>
-        <p>Saturday: 8am – 4pm</p>
-        <p>Sunday: 9am – 2pm</p>
+        <h3>&#9790; Hours of Darkness</h3>
+        <p>Monday &ndash; Friday: 10am &ndash; 10pm</p>
+        <p>Saturday: 11am &ndash; Midnight</p>
+        <p>Sunday: Closed (we rest in our coffins)</p>
 
-        <h3>📞 Get in Touch</h3>
-        <p>hello@berryblissbakery.co.uk</p>
-        <p>020 7946 0123</p>
+        <h3>&#9993; Commune With Us</h3>
+        <p>summon@darkcrumb.co.uk</p>
+        <p>020 6660 1313</p>
       </div>
       <div class="contact-form">
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Your email">
-        <textarea placeholder="Your message"></textarea>
-        <button type="button" onclick="alert('Thanks! We\'ll get back to you soon 🫐')">Send Message</button>
+        <input type="text" placeholder="Your mortal name">
+        <input type="email" placeholder="Your email (we won't curse it)">
+        <textarea placeholder="Speak your darkness..."></textarea>
+        <button type="button" onclick="alert('Your message has been received by the darkness. We shall respond... when we feel like it. &#9760;')">Send Into The Void</button>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="socials">
-      <a href="#">📸</a>
-      <a href="#">🐦</a>
-      <a href="#">📘</a>
+      <a href="#">&#128247;</a>
+      <a href="#">&#129415;</a>
+      <a href="#">&#9760;</a>
     </div>
-    <p>&copy; 2026 Berry Bliss Bakery. All rights reserved.</p>
+    <p>&copy; 2026 Dark Crumb Bakery. All rights reserved. All souls claimed.</p>
   </footer>
 
 </body>
